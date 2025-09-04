@@ -22,6 +22,7 @@ Comprender el uso de JOIN, GROUP BY, ORDER BY y DELETE con relaciones.
 +-------------------+         +-------------------+
 ```
 ## 🛠️ Estructura de la Base de Datos
+```
 CREATE DATABASE IF NOT EXISTS ejercicio_queries;
 USE ejercicio_queries;
 
@@ -39,7 +40,7 @@ CREATE TABLE pedidos (
     total DECIMAL(10,2),
     FOREIGN KEY (cliente_id) REFERENCES clientes(id)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
-
+```
 ## 👥 Datos de prueba
 Clientes
 ```
