@@ -1,16 +1,17 @@
-Ejercicio: Consultas SQL sobre Clientes y Pedidos
+# Ejercicio: Consultas SQL sobre Clientes y Pedidos
 
 Este proyecto consiste en la creación y manipulación de una base de datos relacional simple para practicar queries SQL.
 Se trabaja con dos tablas: clientes y pedidos, relacionadas mediante una clave foránea.
 
-📌 Objetivos
+## 📌 Objetivos
 
 Practicar la creación de bases de datos y tablas en MySQL.
 Insertar datos de prueba en las tablas.
 Ejecutar consultas para proyectar, actualizar, eliminar y agrupar información.
 Comprender el uso de JOIN, GROUP BY, ORDER BY y DELETE con relaciones.
 
-🗂️ Modelo Entidad-Relación
+## 🗂️ Modelo Entidad-Relación
+```
 +-------------------+         +-------------------+
 |      clientes     |         |      pedidos      |
 +-------------------+         +-------------------+
@@ -19,8 +20,8 @@ Comprender el uso de JOIN, GROUP BY, ORDER BY y DELETE con relaciones.
 | direccion         |         | fecha_pedido      |
 | telefono          |         | total             |
 +-------------------+         +-------------------+
-
-🛠️ Estructura de la Base de Datos
+```
+## 🛠️ Estructura de la Base de Datos
 CREATE DATABASE IF NOT EXISTS ejercicio_queries;
 USE ejercicio_queries;
 
@@ -39,8 +40,9 @@ CREATE TABLE pedidos (
     FOREIGN KEY (cliente_id) REFERENCES clientes(id)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
 
-👥 Datos de prueba
+## 👥 Datos de prueba
 Clientes
+```
 INSERT INTO clientes (id, nombre, direccion, telefono) VALUES
     (1, 'Juan Perez', 'Calle 123, Ciudad', '1234567890'),
     (2, 'Maria Gomez', 'Avenida 456, Ciudad', '9876543210'),
@@ -49,8 +51,9 @@ INSERT INTO clientes (id, nombre, direccion, telefono) VALUES
     (5, 'Luis Hernandez', 'Calle 654, Ciudad', '9999999999'),
     (6, 'Carla Martinez', 'Avenida 987, Ciudad', '7777777777'),
     (7, 'Miguel Garcia', 'Calle 321, Ciudad', '8888888888');
-
+```
 Pedidos
+```
 INSERT INTO pedidos (id, cliente_id, fecha_pedido, total) VALUES
     (1, 1, '2025-01-01', 100.00),
     (2, 2, '2025-01-02', 150.00),
@@ -62,8 +65,9 @@ INSERT INTO pedidos (id, cliente_id, fecha_pedido, total) VALUES
     (8, 1, '2025-01-08', 225.00),
     (9, 2, '2025-01-09', 275.00),
     (10, 3, '2025-01-10', 325.00);
+```
 
-📊 Consultas realizadas
+## 📊 Consultas realizadas
 1️⃣ Proyecta todos los clientes y sus pedidos
 2️⃣ Proyecta todos los pedidos de un cliente específico (ID=2)
 3️⃣ Calcula el total de pedidos por cliente
@@ -71,7 +75,7 @@ INSERT INTO pedidos (id, cliente_id, fecha_pedido, total) VALUES
 5️⃣ Elimina un cliente y sus pedidos asociados
 6️⃣ Muestra los tres clientes con más pedidos
 
-🚀 Ejecución
+## 🚀 Ejecución
 Copiar el contenido del archivo .sql en tu editor o cliente MySQL (Workbench, consola, VSCode, etc.).
 Ejecutar primero la creación de base y tablas.
 Insertar los registros de prueba.
